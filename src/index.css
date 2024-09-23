@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+.text-slider {
+  @apply text-2xl text-white flex items-center flex-col gap-10 w-full my-3
+}
+.text-slider h1{
+  line-height: 1.2;
+  @apply md:text-[50px] text-[30px] max-w-5xl lg:max-w-[800px] font-bold
+}
+.text-slider p{
+  
+  @apply text-[20px] max-w-5xl lg:max-w-[800px] 
+}
+
+.caroussel img{
+  filter: brightness(40%);
+@apply  md:h-[1000px] h-[500px]
+}
+button {
+  @apply text-2xl text-white font-semibold bg-blue-700 rounded-xl px-2 py-1
+   
+}
+
+.feature{
+  @apply max-w-[500px] mx-auto text-center bg-blue-700/90 text-white rounded-xl px-4 py-4
+}
+.feature h1{
+  @apply font-bold text-3xl mb-2
+}
+
+Input{
+  @apply rounded-lg text-2xl
+}
+
+/* style dashboard enseignant*/
+
+.item{
+  @apply flex items-center text-center w-full gap-6 hover:bg-blue-700 
+}

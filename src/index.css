@@ -48,3 +48,8 @@ Input{
 .item{
   @apply flex items-center text-center w-full gap-6 hover:bg-blue-700 
 }
+
+
+.image-about {
+  @apply md:w-[300px] lg:w-auto w-[200px]
+}

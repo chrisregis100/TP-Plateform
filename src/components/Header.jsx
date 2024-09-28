@@ -12,8 +12,8 @@ function Header() {
 
       <div className="justify-center gap-4 text-lg hidden md:flex ">
         <Link>Accueil</Link>
-        <Link>A propos</Link>
-        <Link>FAQ</Link>
+        <Link>Notes</Link>
+        <Link>Rapport de TP</Link>
       </div>
       <div className="flex gap-4">
         <Link to={'/connexion'}  className="text-2xl text-white border border-blue-700 rounded-xl px-2 py-1 my-2">Connexion</Link>

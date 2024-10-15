@@ -1,8 +1,9 @@
+import {Layout} from 'antd';
+const {  Footer,  } = Layout;
 
-
-function Footer() {
+function FooterPage() {
   return (
-   <section className="h-[200px] w-full bg-black flex flex-col justify-center text-white absolute bottom-0">
+   <Footer className="h-[200px] w-full bg-black flex flex-col justify-center text-white">
     <div className="flex justify-around items-center">
        <h1 className="text-3xl font-bold">
         FAST/UAC <span className="text-blue-700">.</span>
@@ -18,8 +19,8 @@ function Footer() {
     </div>
     <p className="text-center py-4 ">copywrite 2024© All rights reserved.</p>
     <p className="flex justify-end mx-10 italic">Design by  <span>I2Team</span> </p>
-   </section>
+   </Footer>
   )
 }
 
-export default Footer
+export default FooterPage

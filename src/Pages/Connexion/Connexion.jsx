@@ -5,14 +5,16 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
-import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import FooterPage from "../../components/Footer";
+import { Layout } from "antd";
+import { Footer } from "antd/es/layout/layout";
 
 function Connexion() {
   const [matricule, setmatricule] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [msg, setMsg] = useState("");
   const [afficher, setAfficher] = useState(false);
@@ -39,12 +41,11 @@ function Connexion() {
       console.log(data);
       setAfficher(true);
       setMsg(data.message);
-      localStorage.setItem("token", data.passToken)
+      localStorage.setItem("token", data.passToken);
 
       if (response.ok) {
         resolve();
-        navigate("/Dashboard")
-
+        navigate("/Dashboard");
       } else {
         reject();
         throw new Error("une erreur est survenue");
@@ -59,9 +60,9 @@ function Connexion() {
   }
 
   return (
-    <section>
-      <Header />
-      <div className="mt-32 mb-10">
+    <>
+    <section className="flex justify-center h-[100vh] items-center">
+      <div className="">
         <h1 className="text-[50px] font-semibold text-center text-blue-700 ">
           Connexion
         </h1>
@@ -109,8 +110,9 @@ function Connexion() {
           </Link>{" "}
         </p>
       </div>
-      <Footer />
+
     </section>
+    </>
   );
 }
 

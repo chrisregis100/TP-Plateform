@@ -8,6 +8,7 @@ import ManageTP from "./Pages/Dashboard/ManageTP/ManageTP";
 import Notes from "./Pages/Dashboard/Notes/Notes.jsx";
 import EmailVerified from "./Pages/EmailVerify/index";
 import Register from "./Pages/Inscription/Register";
+import MenuPrincipal from "./Pages/Dashboard/MenuPrincipal/Accueil.jsx"
 
 function App() {
   const router = createBrowserRouter([
@@ -18,7 +19,9 @@ function App() {
     {
       path: "/Dashboard",
       element: <DashboardTeacher />,
-      children: [{ path: "/Dashboard/ManageTP", element: <ManageTP /> },
+      children: [
+        { path: "/Dashboard/MenuPrincipal", element: <MenuPrincipal /> },
+        { path: "/Dashboard/ManageTP", element: <ManageTP /> },
         { path: "/Dashboard/ListeStudents", element: <ListeStudents /> },
         { path: "/Dashboard/Notes", element: <Notes /> },
       ],

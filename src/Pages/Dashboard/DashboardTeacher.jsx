@@ -1,24 +1,43 @@
-import { Outlet } from "react-router-dom";
-import Menu from "../../components/layout/dashboard/Menu";
+
+import { HomeIcon, ListIcon, Newspaper, NotebookIcon } from "lucide-react";
+import { Link, NavLink, Outlet } from "react-router-dom";
+import { Content, Header } from "antd/es/layout/layout";
+
 
 function DashboardTeacher() {
   return (
-    <section className=" flex w-full gap-1">
-        <Menu />
-      <div className="flex flex-col gap-2">
-        <div className="text-white bg-blue-950 rounded-bl-xl h-24 px-2 flex flex-col justify-center text-md w-full ">
-          <h1 className="text-2xl font-bold">
-            Bienvenue sur votre dashboard M.X
-          </h1>
-          <p className="text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-            nobis optio officia fugit cupiditate quae expedita!.
-          </p>
+    <section className="min-h-screen bg-black flex">
+      <div className="bg-black w-[300px] lg:w-[400px] ">
+        <Header className="text-white bg-black font-bold text-3xl py-4 px-4 text-center mx-auto">
+          <Link to={'/'}>FAST/UAC</Link>
+        </Header>
+        <div className="flex flex-col gap-2 bg-black">
+          <NavLink to={"/Dashboard/MenuPrincipal"} className="item">
+            <HomeIcon />
+            <p>Accueil</p>
+          </NavLink>
+          <NavLink to={"/Dashboard/ManageTP"} className="item">
+            <Newspaper />
+            <p>Gérer les TP</p>
+          </NavLink>
+          <NavLink to={"/Dashboard/ListeStudents"} className="item">
+            <ListIcon />
+            <p>Liste des Etudiants</p>
+          </NavLink>
+          <NavLink to={"/Dashboard/Notes"} className="item">
+            <NotebookIcon />
+            <p>Notes Etudiants</p>
+          </NavLink>
         </div>
-      <div className="mx-4">
-        <Outlet />
       </div>
-      </div>
+      <section className="ml-1 bg-slate-100 w-full">
+        <Header className="flex text-black bg-white/45 items-center border-b border-black/30">
+          <h1 className="text-2xl">Bienvenue Mr ...</h1>
+        </Header>
+        <Content >
+          <Outlet />
+        </Content>
+      </section>
     </section>
   );
 }
